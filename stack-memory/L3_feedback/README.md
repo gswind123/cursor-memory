@@ -11,7 +11,7 @@
 - 无修正建议的纯吐槽。
 - **不可推翻 L0/L1**。
 
-## 归档写入时注意
+## 写入时注意
 
 - 优先写入既有分类（如 [`work_assistant/`](work_assistant/README.md)）；新建分类时同步 [`INDEX.md`](../INDEX.md) 与分类 `README.md`。
 

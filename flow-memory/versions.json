@@ -1,5 +1,5 @@
 {
   "schema": "1.0",
-  "description": "记忆归档版本记录。path 字段相对于 flow-memory/ 根目录。版本号格式 YYYYMMDD-序号",
+  "description": "修订版本记录。path 字段相对于本目录（flow-memory）根。版本号格式 YYYYMMDD-序号",
   "entries": []
 }
