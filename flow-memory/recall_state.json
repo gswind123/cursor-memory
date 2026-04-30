@@ -1,0 +1,6 @@
+{
+  "description": "可选占位：若日后在本模板内增加「主动回忆」技能，可用此文件记录按会话/按记忆的冷却状态。byMemory 的键建议为「相对于 flow-memory/ 根的路径 + 可选 # 锚点」（例如 episodic/2030/2030-01-01.md#示例）。当前模板不强制读写本文件。",
+  "bySession": {},
+  "byMemory": {},
+  "cooldownHours": 24
+}

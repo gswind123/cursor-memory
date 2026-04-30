@@ -1,0 +1,49 @@
+---
+alwaysApply: false
+---
+
+# flow-memory（分时记忆 · 公共契约）
+
+本规则为 **manual-apply**（`alwaysApply: false`），内容为 **flow-memory** 体系的**唯一公共契约**。逐步检索顺序、输出格式与归档步骤不在此定义。
+
+## 定位
+
+- **flow-memory**：分时记忆原型（短期流水 / 中期核心 / 长期摘要）。
+- 在未满足下文 **读库闸门** 前，**禁止**读取、概括或引用本 root 下任意落盘内容，也不得臆测用户偏好。
+
+## 读库闸门（Read Gate）
+
+须**同时**满足：
+
+1. **显式点名记忆**：用户消息含 `memory`、`记忆`、`偏好`、`风格`、`历史项目`、`以往习惯` 等一类用语，或明确要求「先读记忆再回答」「参考我的记忆」。
+2. **指向本体系**：用户明确要求参考 **flow-memory**、**分时记忆**，或语境明确针对 core / episodic / summaries 式检索。
+
+未同时满足：**禁止**读库。
+
+## 写库触发（Write Trigger）
+
+与读库闸门**独立**：用户给出**显式归档或更新记忆**的意图时（例如「归档本轮工作」「记入记忆」「更新工作目标 / 决策与约束」），方可写入本 root。未要求写入则**不得**写入。
+
+## Root（可变锚点）
+
+- 记忆落盘 **root** 默认目录名为 **`flow-memory/`**（相对当前 Cursor 工作区根）；下文路径均相对于该 root。
+- 迁移工作区时，仅调整 **root 锚点**（例如映射到工作区内某一目录），**不改变**下列子目录结构与文件名约定。与工作区映射的总原则见仓库说明 **project-target**（本规则不以路径指向该文件）。
+
+## 目录 schema（语义）
+
+1. **Episodic** — `episodic/YYYY/YYYY-MM-DD.md`：短期工作流水（摘要级结论，非逐字对话）。
+2. **Core** — 中期核心（修改需谨慎）：
+   - `core/work_goals.md` — 当前阶段工作目标。
+   - `core/decisions_and_constraints.md` — 决策与约束。
+   - `core/project_context.md` — 业务与领域上下文。
+   - `core/collaboration.md` — 协作偏好与边界。
+   - `core/timeline.md` — 里程碑与时间线节点。
+3. **Summaries** — `summaries/long_term.md`、`summaries/weekly.md`：长期滚动摘要。
+
+根目录可选 **`recall_state.json`**：预留占位，默认不绑定独立召回流程。
+
+## 共用禁止项（读与写）
+
+- 不使用 `emotion` 或虚拟人式「关系叙事」字段。
+- 不写入个人生活细节、敏感凭证、聊天逐字原文。
+- 不依赖本契约未声明的其它规则或外部流程（无隐藏依赖）。
