@@ -72,7 +72,7 @@ stack-memory/
 
 ## 快速开始
 
-1. 将 `stack-memory/` 置于工作区（或 `.workspace/stack-memory/` 并在规则中改根路径）。
+1. 将 `stack-memory/` 置于工作区（或 `.workspace/stack-memory/`）；在全局 `stack-memory.mdc` 中按需编辑「候选 root 路径列表」，把你的路径置顶即可。
 2. 在 Cursor **User Rules & Skills** 中注册 `stack-memory.mdc` 与 `archive-stack-memory`。
 3. 从 [`INDEX.md`](INDEX.md) 开始维护条目。
 

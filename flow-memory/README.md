@@ -48,8 +48,8 @@ recall_triggers: ["关键词", "模块名"]
 
 [`archive-flow-memory`](.cursor/skills/archive-flow-memory/SKILL.md)
 
-版本记录写入根目录 **`versions.json`**（`path` 相对于 `flow-memory/`）。
+版本记录写入根目录 **`versions.json`**（`path` 相对于解析得到的 **root**）。
 
 ## 与工作区锚点
 
-若记忆根不在仓库内的 `flow-memory/`，而在 `.workspace/flow-memory/` 等，只需在用户规则中改 **落盘根路径** 一处；目录结构保持不变。
+落盘位置由规则 [`flow-memory.mdc`](.cursor/rules/flow-memory.mdc) 中的 **候选 root 路径列表**解析：默认已包含 `./flow-memory/`、`./.workspace/flow-memory/` 等。若你的目录只在 `.workspace` 下，把对应路径**置顶**或加入自定义行即可；目录结构（`core/`、`episodic/`、`summaries/`）保持不变。无任何候选匹配时，读写技能会**中断并报错**。

@@ -33,9 +33,10 @@ alwaysApply: true
 
 #### 记忆规则 → 落盘文件的映射约定（避免歧义）
 
-- **映射是什么**：记忆规则/技能中必须明确「落盘根路径（root）」与其下的**固定目录结构**；agent 只按约定读写，不应猜测路径。
-- **默认推荐锚点**：以当前工作区为根，使用相对路径（示例：`./.workspace/flow-memory/`、`./.workspace/stack-memory/`）。
-- **最小可变项**：当迁移到另一个工作区时，尽量只需要调整**一处**“落盘根路径（root）”的取值；其余结构（如 episodic/core/summaries 或 L0/L1/L2/L3）保持不变。
+- **映射是什么**：记忆规则/技能中必须明确「落盘根路径（root）」如何解析与其下的**固定目录结构**；agent 只按约定读写，不应猜测路径。
+- **候选 root 列表（推荐）**：两套记忆的 `.mdc`（`flow-memory`、`stack-memory`）采用「候选 root 路径列表 + 解析算法」作为单一事实来源；用户迁移工作区时通常只需**增删或调整列表中的路径行、或调整顺序**，无需重写整段 Root 叙事。
+- **默认推荐锚点**：以当前工作区为根，使用相对路径；常见 convention 已写入各 `.mdc` 默认列表（含 `./flow-memory/`、`./.workspace/flow-memory/` 等），可按项目习惯置顶自定义路径。
+- **最小可变项**：其余结构（如 episodic/core/summaries 或 L0/L1/L2/L3）保持不变；解析失败时技能须中断并报错（见各 `use-*` / `archive-*`）。
 
 #### 记忆落盘文件示例
 
@@ -44,7 +45,7 @@ alwaysApply: true
  - 用户需要建立一个满足要求的文件夹，比如 : './.workspace/'（绝对路径是'E:\\projects\\SampleCode\\.workspace'）
  - 用户需要在自身项目的版本控制中排除它，比如在 '.gitignore' 中添加 '/.workspace/'
  - 用户需要把记忆原型中的落盘文件放在'.workspace'下，比如 '.workspace/flow-memory/'
- - 用户需要手动在记忆规则中把**落盘根路径**指向该路径：假设对应的 mdc 为 `flow-memory.mdc`，则需要在文件中对应位置把“记忆落盘根目录”的取值改为 `.workspace/flow-memory/`
+ - 用户需要手动在记忆规则（如 `flow-memory.mdc`）中配置落盘位置：**优先编辑「候选 root 路径列表」**，把你的路径（如 `./.workspace/flow-memory/`）插入列表顶部或替换列表项，而不是重写整节 Root 说明
 
  ## 本项目的长期目标
 
